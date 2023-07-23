@@ -1,10 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
 
 @Schema({
   timestamps: true,
 })
-export class User extends Document {
+export class User {
   @Prop()
   name: string;
 
@@ -19,6 +18,9 @@ export class User extends Document {
 
   @Prop({ default: false })
   isActive: boolean;
+
+  @Prop()
+  otpCreatedAt: Date;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

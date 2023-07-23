@@ -4,14 +4,18 @@ import * as nodemailer from 'nodemailer';
 
 @Injectable()
 export class EmailService {
-  async sendEmail(recipientEmail: string, subject: string, body: string): Promise<void> {
+  async sendEmail(
+    recipientEmail: string,
+    subject: string,
+    body: string,
+  ): Promise<void> {
     const transporter = nodemailer.createTransport({
-        host: process.env.MAIL_HOST,
-        port: process.env.EMAIL_PORT,
-        auth: {
-          user: process.env.MAIL_USER,
-          pass: process.env.MAIL_PASS,
-        },
+      host: process.env.MAIL_HOST,
+      port: process.env.EMAIL_PORT,
+      auth: {
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
+      },
     });
 
     const mailOptions = {
