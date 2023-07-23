@@ -11,7 +11,7 @@ import { EmailModule } from './email/email.module';
   imports: [
     ConfigModule.forRoot({
       envFilePath: '.env',
-      isGlobal: true
+      isGlobal: true,
     }),
     MongooseModule.forRoot(process.env.MONGO_URL),
     AuthModule,
