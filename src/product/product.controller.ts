@@ -95,7 +95,7 @@ export class ProductController {
       return {
         status: 200,
         success: true,
-        data: null,
+        data,
       };
     } catch (error) {
       return {
