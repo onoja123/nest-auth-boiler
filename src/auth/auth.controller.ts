@@ -114,7 +114,6 @@ export class AuthController {
   }
 
   @Post('/resetpassword')
-  @Post('/resetpassword')
   async resetPassword(
     @Body() resetPasswordDto: ResetPasswordDto,
   ): Promise<any> {
